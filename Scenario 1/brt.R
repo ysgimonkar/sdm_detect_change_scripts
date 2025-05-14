@@ -12,8 +12,8 @@ library(caret)
 # install_github("gbm-developers/gbm3")
 library(gbm3)
 
-# Loading data
-load("sc1_simulations.RData")
+# Loading simulation data from respective scenario
+load("simulations.RData")
 
 brt_dat <- function(data){
   
@@ -135,7 +135,7 @@ parallel::stopCluster(cl)
 rm(cl)
 rm(brt_dat)
 
-# save(brt_par, file = "sc1_brt.RData")
+# save(brt_par, file = "brt.RData")
 
 
 
