@@ -161,5 +161,5 @@ hmsc_par <- parallel::parLapply(cl,
 
 parallel::stopCluster(cl)
 
-# save(hmsc_par, file = "sc1_hmsc.RData")
+# save(hmsc_par, file = "Chapter-1/Scenario 1/Data/sc1_hmsc.RData")
 
