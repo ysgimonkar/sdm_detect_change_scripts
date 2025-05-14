@@ -148,7 +148,6 @@ full_pred_mean <- list()
 
 for (i in 1:length(boral_par)) {
   
-  
   ## identify prediction files that we need to load
   pred.dir <- paste0("~/full/pred", i, "/")
   pred.files.raw <- list.files(pred.dir)
@@ -200,7 +199,7 @@ values(sst_initial) <- scale(values(sst_initial))
 chl_initial <- rast("simulated_chlorophyll_raster.tif")
 values(chl_initial) <- scale(values(chl_initial))
 dsStart_initial <- sst_initial
-values(dsStart_initial) <- -1.224757 #  -1.224757/0.0000331176/1.224724 
+values(dsStart_initial) <- -1.224757 
 
 # Add layer names
 names(sst_initial) <- "sst"
@@ -215,7 +214,6 @@ rm(list = c("chl_initial", "dsStart_initial", "sst_initial", "ras_stack"))
 #############################
 
 for(i in 1:length(boral_par)){
-  i = 1
   
   dir.create(paste0("~/initial/pred", i))
   
@@ -304,10 +302,10 @@ for(i in 1:length(boral_par)){
     run.name <- sprintf("%06d",cell.sel.v[l])
     
     save(
-      bp, #predY.pa.up, predY.pa.low,
+      bp, 
       sel.loop, XData.grid.loop, xy.grid.loop,
       file=paste0("~/initial/pred",i,"/", run.name,".Rdata"))
-    rm(bp)#predY.loop.pa, predY.pa.up, predY.pa.low)
+    rm(bp)
   }
   computational.time = proc.time() - ptm
   parallel::stopCluster(cl = c1)
@@ -366,7 +364,7 @@ ras_stack <- ras_stack[[c("Oct.2012", "Oct.2013", "Oct.2014", "Oct.2015",
 
 sst_final <- rast(calc(ras_stack, fun = mean, na.rm = TRUE))
 values(sst_final) <- scale(values(sst_final))
-chl_final <- rast("correlated_dummy_raster.tif")
+chl_final <- rast("simulated_chlorophyll_raster.tif")
 values(chl_final) <- scale(values(chl_final))
 dsStart_final <- sst_final
 values(dsStart_final) <- 1.224724  
@@ -381,43 +379,11 @@ final_stack <- c(sst_final, dsStart_final, chl_final)
 
 rm(list = c("chl_final", "dsStart_final", "sst_final", "ras_stack"))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #############################
 
 for(i in 1:length(boral_par)){
   
-  i = 1
-  
-  dir.create(paste0("~/ch1_sc2/final/pred", i))
+  dir.create(paste0("~/final/pred", i))
   
   fitSepTF <- boral_par[[i]]$boral_fit
   
@@ -506,7 +472,7 @@ for(i in 1:length(boral_par)){
     save(
       bp, #predY.pa.up, predY.pa.low,
       sel.loop, XData.grid.loop, xy.grid.loop,
-      file=paste0("~/ch1_sc2/final/pred",i,"/", run.name,".Rdata"))
+      file=paste0("~/final/pred",i,"/", run.name,".Rdata"))
     rm(bp)#predY.loop.pa, predY.pa.up, predY.pa.low)
   }
   computational.time = proc.time() - ptm
@@ -519,7 +485,7 @@ final_pred_mean <- list()
 for (i in 1:length(boral_par)) {
   
   ## identify prediction files that we need to load
-  pred.dir <- paste0("~/ch1_sc2/final/pred", i, "/")
+  pred.dir <- paste0("~/final/pred", i, "/")
   pred.files.raw <- list.files(pred.dir)
   pred.files.pa <- pred.files.raw
   
@@ -551,6 +517,18 @@ for (i in 1:length(boral_par)) {
 }
 
 final <- Reduce(`+`, final_pred_mean) / length(final_pred_mean)
+
+#########
+
+boral_ext <- list()
+boral_ext[[1]] <- full
+boral_ext[[2]] <- initial
+boral_ext[[3]] <- final
+
+names(boral_ext) <- c("full", "initial", "final")
+
+# save for respective scenario accordingly
+#save(boral_ext, file = "~/boral_extrapolations_mean.RData")
 
 #########
 
