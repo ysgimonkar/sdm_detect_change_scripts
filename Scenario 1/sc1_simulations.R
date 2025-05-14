@@ -6,9 +6,9 @@ library(ecomix)
 library(lubridate)
 
 # Introduction 
-#In this document, we create a list of 100 simulated datasets that are based on the SAM framework.
+# Scenario 1
 
-load("Chapter-1/krill_data.RData")
+load("krill_data.RData")
 
 sim_dat <- function(data){
   
