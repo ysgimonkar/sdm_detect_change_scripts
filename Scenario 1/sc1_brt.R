@@ -135,7 +135,7 @@ parallel::stopCluster(cl)
 rm(cl)
 rm(brt_dat)
 
-# save(brt_par, file = "Chapter-1/Scenario 1/Data/sc1_brt.RData")
+# save(brt_par, file = "sc1_brt.RData")
 
 
 
