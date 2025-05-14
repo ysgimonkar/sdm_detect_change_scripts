@@ -1,5 +1,5 @@
 ---
-title: "simulated_chlorophyll"
+title: "simulating_chlorophyll"
 date: "2024-03-02"
 output: html_document
 editor_options: 
