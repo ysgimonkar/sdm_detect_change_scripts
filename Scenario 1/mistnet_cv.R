@@ -6,9 +6,9 @@ library(mistnet)
 library(lubridate)
 library(pROC)
 
-# Loading data
+# Loading simulation data from respective scenario
 
-load("sc1_simulations.RData")
+load("simulations.RData")
 
 fit <- function(x, y, hyperparams, i){
   MNet_mod = mistnet(
@@ -130,4 +130,4 @@ logliks <- aggregate(mistnet.results, by=list(mistnet.results$iteration), mean)
 
 # save(mistnet.results,
 #      logliks, 
-#      file = "mistnet_cv1.RData")
+#      file = "mistnet_cv.RData")
