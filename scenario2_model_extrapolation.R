@@ -16,7 +16,7 @@ library(Hmsc)
 library(plotrix)
 library(parallel)
 
-############################ Model Extrapolations (except HMSC and BORAL) for Scenario 1 only ###############
+############################ Model Extrapolations (except HMSC and BORAL) for Scenario 2 only ###############
 ######################### Raw ###########################
 
 # load extrapolation data
