@@ -127,7 +127,7 @@ boral_par <- parallel::parLapply(cl,
 
 parallel::stopCluster(cl)
 
-# save(boral_par, file = "sc1_boral.RData")
+# save(boral_par, file = "Chapter-1/Scenario 1/Data/sc1_boral.RData")
 
 
 
