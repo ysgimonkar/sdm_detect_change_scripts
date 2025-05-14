@@ -1,3 +1,5 @@
+# This can be used for all four scenarios
+
 # Loading libraries
 library(tidyverse)
 library(dplyr)
@@ -527,7 +529,7 @@ boral_ext[[3]] <- final
 
 names(boral_ext) <- c("full", "initial", "final")
 
-# save for respective scenario accordingly
+# save accordingly for respective scenario
 #save(boral_ext, file = "~/boral_extrapolations_mean.RData")
 
 #########
