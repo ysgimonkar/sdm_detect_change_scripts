@@ -8,7 +8,7 @@ library(lubridate)
 # Introduction 
 #In this document, we create a list of 100 simulated datasets that are based on the SAM framework.
 
-load("krill_data.RData")
+load("Chapter-1/krill_data.RData")
 
 sim_dat <- function(data){
   
@@ -76,4 +76,4 @@ sim_dat <- function(data){
 
 simulation1 <- sim_dat(processed)
 
-# save(simulation1, file = "sc1_simulations.RData")
+# save(simulation1, file = "Chapter-1/Scenario 1/sc1_simulations.RData")
