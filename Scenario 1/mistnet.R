@@ -8,7 +8,7 @@ library(pROC)
 library(parallel)
 library(caret)
 
-Loading simulation data from respective scenario
+# Loading simulation data from respective scenario
 
 load("simulations.RData")
 
@@ -22,7 +22,7 @@ missnet <- function(data){
   library(parallel)
   library(caret)
   
-  load("mistnet_cv1.RData")
+  load("mistnet_cv.RData")
   
   training.samples <- data$sst %>%
     createDataPartition(p = 0.75, list = FALSE)
