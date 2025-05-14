@@ -8,9 +8,9 @@ library(pROC)
 library(parallel)
 library(caret)
 
-# Loading data
+Loading simulation data from respective scenario
 
-load("sc1_simulations.RData")
+load("simulations.RData")
 
 missnet <- function(data){
   library(tidyverse)
@@ -183,4 +183,4 @@ mistnet_par <- parallel::parLapply(cl,
 
 parallel::stopCluster(cl)
 
-# save(mistnet_par, file = "sc1_mistnet.RData")
+# save(mistnet_par, file = "mistnet.RData")
