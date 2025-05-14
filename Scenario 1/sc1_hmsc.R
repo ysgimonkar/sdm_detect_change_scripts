@@ -7,9 +7,9 @@ library(lubridate)
 library(pROC)
 library(caret)
 
-# Loading data
+Loading simulation data from respective scenario
 
-load("sc1_simulations.RData")
+load("simulations.RData")
 
 hmsc <- function(data){
   
@@ -161,5 +161,5 @@ hmsc_par <- parallel::parLapply(cl,
 
 parallel::stopCluster(cl)
 
-# save(hmsc_par, file = "sc1_hmsc.RData")
+# save(hmsc_par, file = "hmsc.RData")
 
