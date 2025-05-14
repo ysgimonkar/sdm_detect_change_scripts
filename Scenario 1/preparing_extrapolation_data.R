@@ -1,3 +1,5 @@
+# This can be used for all four scenarios.
+
 # Loading libraries
 library(tidyverse)
 library(dplyr)
