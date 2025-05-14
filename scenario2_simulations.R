@@ -1,3 +1,5 @@
+# This is for scenario 2 only
+
 # Loading libraries
 library(tidyverse)
 library(dplyr)
