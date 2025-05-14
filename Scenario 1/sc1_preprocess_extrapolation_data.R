@@ -165,7 +165,7 @@ ext_fun <- function(stack){
               dsStart = mean(dsStart)) %>%
     ungroup()
   
-  chl <- rast("correlated_dummy_raster.tif")
+  chl <- rast("simulated_chlorophyll_raster.tif")
   
   
   chl_df <- as.data.frame(chl, xy = TRUE)
