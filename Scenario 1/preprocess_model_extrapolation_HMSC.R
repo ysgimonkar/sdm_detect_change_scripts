@@ -1,3 +1,5 @@
+# This can be used for all four scenarios
+
 # Loading libraries
 library(tidyverse)
 library(dplyr)
@@ -24,7 +26,7 @@ ras_stack <- ras_stack[[c("Oct.2001", "Oct.2002", "Oct.2003", "Oct.2004", "Oct.2
 
 sst_full <- rast(calc(ras_stack, fun = mean, na.rm = TRUE))
 values(sst_full) <- scale(values(sst_full))
-chl_full <- rast("correlated_dummy_raster.tif")
+chl_full <- rast("simulated_chlorophyll_raster.tif")
 values(chl_full) <- scale(values(chl_full))
 dsStart_full <- sst_full
 values(dsStart_full) <- 0.0000331176 
@@ -41,7 +43,9 @@ rm(list = c("chl_full", "dsStart_full", "sst_full", "ras_stack"))
 
 #############################
 
-load("sc1_hmsc.RData")
+# Load data from respective scenario
+
+load("hmsc.RData")
 
 for(i in 1:length(hmsc_par)){
   dir.create(paste0("~/full/pred", i))
@@ -201,7 +205,7 @@ ras_stack <- ras_stack[[c("Oct.2001", "Oct.2002", "Oct.2003", "Oct.2004",
 
 sst_initial <- rast(calc(ras_stack, fun = mean, na.rm = TRUE))
 values(sst_initial) <- scale(values(sst_initial))
-chl_initial <- rast("correlated_dummy_raster.tif")
+chl_initial <- rast("simulated_chlorophyll_raster.tif")
 values(chl_initial) <- scale(values(chl_initial))
 dsStart_initial <- sst_initial
 values(dsStart_initial) <- -1.224757 
@@ -377,7 +381,7 @@ ras_stack <- ras_stack[[c("Oct.2012", "Oct.2013", "Oct.2014", "Oct.2015",
 
 sst_final <- rast(calc(ras_stack, fun = mean, na.rm = TRUE))
 values(sst_final) <- scale(values(sst_final))
-chl_final <- rast("correlated_dummy_raster.tif")
+chl_final <- rast("simulated_chlorophyll_raster.tif")
 values(chl_final) <- scale(values(chl_final))
 dsStart_final <- sst_final
 values(dsStart_final) <- 1.224724 
@@ -546,7 +550,8 @@ hmsc_ext[[3]] <- final
 
 names(hmsc_ext) <- c("full", "initial", "final")
 
-save(hmsc_ext, file = "~/sc1_hmsc_extrapolations_mean.RData")
+# save accordingly for respective scenario
+#save(hmsc_ext, file = "~/hmsc_extrapolations_mean.RData")
 
 ################################
 
