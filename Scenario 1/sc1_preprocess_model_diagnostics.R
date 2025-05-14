@@ -1,3 +1,5 @@
+# This can be used for all four scenarios
+
 # Loading libraries
 library(tidyverse)
 library(dplyr)
@@ -15,14 +17,14 @@ library(mistnet)
 library(Hmsc)
 library(plotrix)
 
-# Load Data
+# Load data from respective scenario
 
-load("sc1_sam.RData")
-load("sc1_glm.RData")
-load("sc1_brt.RData")
-load("sc1_hmsc.RData")
-load("sc1_boral.RData")
-load("sc1_mistnet.RData")
+load("sam.RData")
+load("glm.RData")
+load("brt.RData")
+load("hmsc.RData")
+load("boral.RData")
+load("mistnet.RData")
 
 ### RMSE ---------------------------------------------------------------------------------
 
@@ -283,4 +285,4 @@ rm(list = c("i", "j", "values"))
 #      max_auc,
 #      sam_rmse,
 #      sam_tjur,
-#      sam_auc, file = "sc1_model_diagnostics.RData")
+#      sam_auc, file = "model_diagnostics.RData")
