@@ -5,8 +5,7 @@ library(ggplot2)
 library(ecomix)
 library(lubridate)
 
-# Introduction 
-# Scenario 1
+# Loading data
 
 load("krill_data.RData")
 
