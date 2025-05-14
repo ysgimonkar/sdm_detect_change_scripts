@@ -1,6 +1,5 @@
 ---
-title: "Untitled"
-author: "Yash Gimonkar"
+title: "simulated_chlorophyll"
 date: "2024-03-02"
 output: html_document
 editor_options: 
@@ -27,18 +26,6 @@ import rasterio
 from rasterio.transform import from_origin
 ```
 
-```{r}
-library(reticulate)
-library(terra)
-library(raster)
-```
-
-```{r}
-ras_stack <- stack("C:/Users/yashg/OneDrive - University of Tasmania/Detecting change project/Data/SO_CPR_yr_month_sst_stack.gri")
-
-ras_stack <- aggregate(ras_stack, fact = 4)
-```
-
 ```{python echo=TRUE}
 # Define raster dimensions based on ras_stack
 rows = 62
@@ -49,7 +36,7 @@ xmin, xmax = 53, 160
 ymin, ymax = -69, -38
 
 # Define resolution
-resolution = (0.5, 0.5)
+resolution = (0.25, 0.25)
 
 # Generate coordinates grid
 x_coords = np.linspace(xmin, xmax, cols)
@@ -64,7 +51,7 @@ sigma = 12  # Standard deviation for Gaussian filter
 correlated_values = gaussian_filter(random_values, sigma=sigma)
 
 # Define output file path
-output_path = "C:/Users/yashg/OneDrive - University of Tasmania/Detecting change project/Data/Chapter 1/Simulation/Multiple runs/correlated_dummy_raster.tif"
+output_path = "simulated_chlorophyll_raster.tif"
 
 # Write the correlated values to a GeoTIFF file
 with rasterio.open(
@@ -81,14 +68,6 @@ with rasterio.open(
     dst.write(correlated_values, 1)
 ```
 
-```{r}
-ras_corr<- rast("correlated_dummy_raster.tif")
 
-plot(ras_corr)
-plot(rast(ras_stack$Jan.1997))
-```
 
-```{r}
-ras_corr
-ras_stack$Jan.1997
-```
+
