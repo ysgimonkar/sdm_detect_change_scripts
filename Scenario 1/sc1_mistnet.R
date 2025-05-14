@@ -183,4 +183,4 @@ mistnet_par <- parallel::parLapply(cl,
 
 parallel::stopCluster(cl)
 
-# save(mistnet_par, file = "Chapter-1/Scenario 1/Data/sc1_mistnet.RData")
+# save(mistnet_par, file = "sc1_mistnet.RData")
