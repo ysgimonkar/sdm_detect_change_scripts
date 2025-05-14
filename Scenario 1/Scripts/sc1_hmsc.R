@@ -9,7 +9,7 @@ library(caret)
 
 # Loading data
 
-load("Ch1_sc1_100_simulations.RData")
+load("sc1_simulations.RData")
 
 hmsc <- function(data){
   
