@@ -1,4 +1,4 @@
-# This is for Scenario 1 only
+# This is for Scenario 2 only
 
 # loading libraries
 library(tidyverse)
