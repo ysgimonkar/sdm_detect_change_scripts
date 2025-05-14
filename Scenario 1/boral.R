@@ -8,8 +8,8 @@ library(pROC)
 library(parallel)
 library(caret)
 
-# Loading data
-load("sc1_simulations.RData")
+# Loading simulation data from respective scenario
+load("simulations.RData")
 
 bor_dat <- function(data){
   
@@ -127,7 +127,7 @@ boral_par <- parallel::parLapply(cl,
 
 parallel::stopCluster(cl)
 
-# save(boral_par, file = "sc1_boral.RData")
+# save(boral_par, file = "boral.RData")
 
 
 
