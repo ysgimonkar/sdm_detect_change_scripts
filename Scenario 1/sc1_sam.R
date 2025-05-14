@@ -121,4 +121,4 @@ sam_par <- parallel::parLapply(cl,
 
 parallel::stopCluster(cl)
 
-# save(sam_par, file = "Chapter-1/Scenario 1/Data/sc1_sam.RData")
+# save(sam_par, file = "sc1_sam.RData")
