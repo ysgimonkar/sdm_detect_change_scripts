@@ -76,4 +76,4 @@ sim_dat <- function(data){
 
 simulation1 <- sim_dat(processed)
 
-# save(simulation1, file = "Ch1_sc1_simulations.RData")
+# save(simulation1, file = "sc1_simulations.RData")
