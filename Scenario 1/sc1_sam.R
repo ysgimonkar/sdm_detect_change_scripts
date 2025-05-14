@@ -8,9 +8,9 @@ library(pROC)
 library(parallel)
 library(caret)
 
-# Loading data
+# Loading simulation data from respective scenario
 
-load("sc1_simulations.RData")
+load("simulations.RData")
 
 sam <- function(data){
   
@@ -121,4 +121,4 @@ sam_par <- parallel::parLapply(cl,
 
 parallel::stopCluster(cl)
 
-# save(sam_par, file = "sc1_sam.RData")
+# save(sam_par, file = "sam.RData")
