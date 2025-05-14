@@ -8,9 +8,9 @@ library(parallel)
 library(sdm)
 library(caret)
 
-# Loading data
+# Loading simulation data from respective scenario
 
-load("sc1_simulations.RData")
+load("simulations.RData")
 
 glm_dat <- function(data){
   
@@ -131,4 +131,4 @@ parallel::stopCluster(cl)
 rm(cl)
 rm(glm_dat)
 
-# save(glm_par, file = "sc1_glm.RData")
+# save(glm_par, file = "glm.RData")
