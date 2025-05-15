@@ -47,7 +47,7 @@ world_crop <- crop(world_sp, extent_crop)
 
 ########################### SCENARIO 1 ####################################
 
-load("model_extrapolations.RData")
+load("sc1_model_extrapolations.RData")
 load("cells.RData")
 
 #### difference between final and initial days ####
