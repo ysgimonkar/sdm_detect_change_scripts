@@ -47,8 +47,7 @@ world_crop <- crop(world_sp, extent_crop)
 
 ########################### SCENARIO 1 ####################################
 
-# load("Ch1_sc1_model_extrapolations.RData")
-load("Ch1_sc4_model_extrapolations.RData")
+load("model_extrapolations.RData")
 load("cells.RData")
 
 #### difference between final and initial days ####
@@ -303,13 +302,15 @@ raw_diff <- diff_fun(raw_ras, r_obj)
 brt_diff <- diff_fun(brt_ras, r_obj)
 hmsc_diff <- br_hm_diff_fun(hmsc_ras, r_obj)
 
-#
+## Plotting difference between Final and Initial period for Actual Response
 ggplot_list <- lapply(raw_diff[c(7:9)], function(p) as.ggplot((p)))
 plot_grid(plotlist = ggplot_list, nrow = 1)
 
+## Plotting difference between Final and Initial period for BRT Response
 ggplot_list <- lapply(brt_diff[c(7:9)], function(p) as.ggplot((p)))
 plot_grid(plotlist = ggplot_list, nrow = 1)
 
+## Plotting difference between Final and Initial period for HMSC Response
 ggplot_list <- lapply(hmsc_diff[c(7:9)], function(p) as.ggplot((p)))
 plot_grid(plotlist = ggplot_list, nrow = 1)
 
