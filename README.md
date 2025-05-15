@@ -15,7 +15,7 @@ The order of analysis scripts should be as follows (for scenario 1 but is the sa
    d. hmsc.R,
 
    e. mistnet.R
-   >Beore running the mistnet.R script, please run the mistnet_cv.R script to save the cross-validation metrics for faster processing.
+   >Before running the mistnet.R script, please run the mistnet_cv.R script to save the cross-validation metrics for faster processing.
 
    f. sam.R.
    
